@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Heart Disease Data Visualization Dashboard</title>
+    <style>
+        :root {
+            --bg: #f4f7f6;
+            --panel: #ffffff;
+            --ink: #153243;
+            --accent: #2a9d8f;
+            --border: #dce4e8;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #eef5f3, #f8fbfb);
+            color: var(--ink);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #0f2a36;
+            font-size: 1.9rem;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #375462;
+        }
+
+        .viz-frame {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            box-shadow: 0 10px 28px rgba(21, 50, 67, 0.12);
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            min-height: 78vh;
+            border: 0;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+
+            iframe {
+                min-height: 70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>Heart Disease Data Visualization Dashboard</h1>
+        <p>
+            This dashboard summarizes key cardiovascular risk indicators such as age,
+            blood pressure, cholesterol, smoking, and activity levels.
+        </p>
+
+        <section class="viz-frame">
+            <iframe src="{{ tableau_url }}" allowfullscreen></iframe>
+        </section>
+
+        <p class="footer">
+            If the embedded view does not load, open it directly in
+            <a href="{{ tableau_url }}" target="_blank" rel="noopener">Tableau</a>.
+        </p>
+    </main>
+</body>
+</html>
